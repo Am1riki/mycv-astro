@@ -1,0 +1,46 @@
+---
+import {Carousel} from 'astro-carousel';
+import type { ComponentProps } from 'astro/types';
+import cert1 from "../../public/1.png"
+import cert2 from "../../public/2.png"
+import cert10 from "../../public/10.jpeg"
+
+const images: ComponentProps<typeof Carousel>["images"] = [
+  {
+    src: cert1,
+    alt: "Описание изображения 1",
+    format: "webp",
+    width: 1350,
+    height: 1080,
+    widths: [450, 675, 1350],
+  },
+  {
+    src: cert2,
+    alt: "Описание изображения 2",
+    format: "webp",
+    width: 1350,
+    height: 1080,
+    widths: [450, 675, 1350],
+  },
+  {
+    src: cert10,
+    alt: "Описание изображения 3",
+    format: "webp",
+    width: 1350,
+    height: 1080,
+    widths: [450, 675, 1350],
+  },
+];
+---
+
+<div class="carousel-container">
+  <!-- Используйте компонент Carousel с переданными изображениями -->
+  <Carousel images={images} />
+</div>
+
+<style>
+.carousel-container {
+  max-width: 600px; /* Задайте ширину для карусели */
+  margin: 0 auto; /* Центрирование */
+}
+</style>
